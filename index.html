@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập 39 - Trang Chủ Tổng Hợp</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+            border-bottom: 2px solid #e5e7eb;
+            padding-bottom: 20px;
+        }
+
+        header h1 {
+            color: #1d4ed8;
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            color: #4b5563;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: #fafafa;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-img-wrap {
+            width: 100%;
+            height: 220px;
+            background: #e5e7eb;
+            overflow: hidden;
+        }
+
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 10px;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            text-align: center;
+            background-color: #2563eb;
+            color: #ffffff;
+            padding: 10px 16px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>BÀI TẬP 39: TRANG CHỦ TỔNG HỢP</h1>
+            <p>Web có hiệu ứng Javascript</p>
+        </header>
+
+        <div class="card-grid">
+            <!-- Bài tập 38 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <!-- Ảnh chụp kết quả Bài tập 38 -->
+                    <img src="ketqua-bt38.png" alt="Kết quả Bài tập 38" onerror="this.src='https://picsum.photos/id/1/600/400'">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Kết Quả Bài Tập 38</div>
+                    <div class="card-desc">Hiển thị hình ảnh kết quả và liên kết đến bài tập số 38 đã thực hiện trước đó.</div>
+                    <a href="ketqua-bt38.png" class="btn" target="_blank">Xem ảnh kết quả BT38</a>
+                </div>
+            </div>
+
+            <!-- Bài tập Đèn Kéo Quân -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <!-- Ảnh đại diện đèn kéo quân -->
+                    <img src="images/anh1.jpg" alt="Đèn Kéo Quân" onerror="this.src='https://picsum.photos/id/11/600/400'">
+                </div>
+                <div class="card-content">
+                    <div class="card-title">Bài Tập: Đèn Kéo Quân 3D</div>
+                    <div class="card-desc">Hiệu ứng đèn xoay 6 mặt bằng Javascript & CSS 3D. Dừng khi rê chuột vào, tiếp tục quay khi rê chuột ra.</div>
+                    <a href="den-keo-quan.html" class="btn">Xem bài Đèn Kéo Quân</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

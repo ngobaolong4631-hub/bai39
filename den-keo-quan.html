@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiệu Ứng Đèn Kéo Quân</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: radial-gradient(circle at center, #2b1055, #0a0118);
+            color: #fff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin-bottom: 8px;
+            text-shadow: 0 0 10px #ffb703;
+            font-size: 26px;
+        }
+
+        p.note {
+            margin-top: 0;
+            margin-bottom: 40px;
+            color: #d1d5db;
+            font-size: 14px;
+        }
+
+        /* Vùng phối cảnh 3D */
+        .stage {
+            width: 200px;
+            height: 270px;
+            perspective: 1000px;
+        }
+
+        /* Lồng đèn kéo quân */
+        .lantern {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        /* 6 mặt của đèn */
+        .face {
+            position: absolute;
+            width: 180px;
+            height: 250px;
+            border: 3px solid #fbbf24;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(251, 191, 36, 0.45);
+            transition: border-color 0.3s;
+        }
+
+        .face:hover {
+            border-color: #f43f5e;
+        }
+
+        .face img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Tính toán góc xoay 6 mặt: 360 / 6 = 60 độ mỗi mặt */
+        .face:nth-child(1) { transform: rotateY(0deg) translateZ(170px); }
+        .face:nth-child(2) { transform: rotateY(60deg) translateZ(170px); }
+        .face:nth-child(3) { transform: rotateY(120deg) translateZ(170px); }
+        .face:nth-child(4) { transform: rotateY(180deg) translateZ(170px); }
+        .face:nth-child(5) { transform: rotateY(240deg) translateZ(170px); }
+        .face:nth-child(6) { transform: rotateY(300deg) translateZ(170px); }
+
+        .back-link {
+            margin-top: 50px;
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HIỆU ỨNG ĐÈN KÉO QUÂN 6 MẶT</h1>
+    <p class="note">Rê chuột vào một hình để dừng đèn &bull; Rê chuột ra để đèn quay tiếp</p>
+
+   <div class="lantern" id="lantern">
+    <div class="face">
+        <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=400&h=500&fit=crop" alt="Đèn lồng đỏ">
+    </div>
+    <div class="face">
+        <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=400&h=500&fit=crop" alt="Đêm hoa đăng">
+    </div>
+    <div class="face">
+        <img src="https://images.unsplash.com/photo-1570784332176-fdd73da66f03?w=400&h=500&fit=crop" alt="Đèn giấy Trung Thu">
+    </div>
+    <div class="face">
+        <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=400&h=500&fit=crop" alt="Phố lồng đèn">
+    </div>
+    <div class="face">
+        <img src="https://images.unsplash.com/photo-1532767153582-b1a0e5145009?w=400&h=500&fit=crop" alt="Trăng rằm">
+    </div>
+    <div class="face">
+        <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?w=400&h=500&fit=crop" alt="Lễ hội đèn lồng">
+    </div>
+</div>
+    <a class="back-link" href="index.html">&larr; Về trang chủ Bài tập 39</a>
+
+    <script>
+        const lantern = document.getElementById('lantern');
+        let currentAngle = 0;
+        let isPaused = false;
+
+        // Vòng lặp xoay đèn
+        function animate() {
+            if (!isPaused) {
+                currentAngle += 0.5; // Tốc độ quay
+                lantern.style.transform = `rotateY(${currentAngle}deg)`;
+            }
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Rê chuột vào đèn: Dừng quay
+        lantern.addEventListener('mouseenter', () => {
+            isPaused = true;
+        });
+
+        // Rê chuột ra khỏi đèn: Quay tiếp
+        lantern.addEventListener('mouseleave', () => {
+            isPaused = false;
+        });
+    </script>
+</body>
+</html>
